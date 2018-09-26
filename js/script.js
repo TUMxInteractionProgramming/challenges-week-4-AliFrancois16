@@ -22,7 +22,7 @@ function switchChannel(channelName) {
     document.getElementById('channel-name').innerHTML = channelName.name;
 
     //#6 change the #channel #location
-    document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/upgrading.never.helps" target="_blank"><strong>' + channelName.createdBy + '</strong></a>';
+    document.getElementById('channel-location').innerHTML = 'by <a href="http://w3w.co/' + channelName.createdBy + '" target="_blank"><strong>' + channelName.createdBy + '</strong></a>';
 
     /* #6 #liking channels on #click */
     $('#channel-star').attr('class', (channelName.starred ? 'fas' : 'far') + ' fa-star');
