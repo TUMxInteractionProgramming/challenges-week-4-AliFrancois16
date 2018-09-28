@@ -63,3 +63,29 @@ function toggleEmojis() {
     /* $('#emojis').show(); // #show */
     $('#emojis').toggle(); // #toggle
 }
+
+// Message(text) constructor function
+function Message(text) {
+    this.createdBy = currentLocation.what3words;
+    this.latitude = currentLocation.latitude;
+    this.longitude = currentLocation.longitude;
+    this.createdOn = Date.now();
+    this.expiresOn = new Date(Date.now() + (15 * 60 * 1000)).getTime();
+    this.text = text;
+    this.own = true;
+}
+// sendMessage() function
+function sendMessage() {
+    var text = $("#text").val();
+    var message = new Message(text);
+    createMessageElement(message);
+}
+// createMessageElement() function
+function createMessageElement(messageObject) {
+    $("<div class='message'>").html("<h3><a href=" + messageObject.createdBy + " target='_blank'><strong>" + messageObject.createdBy + "</strong></a>" + new Date(messageObject.createdOn).toDateString() + "<em>" + expiresIn(messageObject.expiresOn) + " min. left</em></h3><p>" + messageObject.text + "</p><button>+5 min.</button>").appendTo("#messages");
+}
+// Calculate Time function
+function expiresIn(time) {
+    return Math.round((((time - Date.now()) % 86400000) % 3600000) / 60000);
+    // return new Date(time - Date.now()).getMinutes();
+}

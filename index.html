@@ -165,6 +165,10 @@
             <!-- #6 #smile #show the menu on click -->
             <button id="emojis-button" onclick="toggleEmojis()"><i class="far fa-smile"></i></button>
             <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
+            <form action="" method="GET" onsubmit="event.preventDefault();">
+                <input type="text" name="text" id="text" placeholder="Message...">
+                <button type="submit" onclick="sendMessage()"><i class="fas fa-arrow-right"></i></button>
+            </form>
         </div>
     </div>
 

@@ -281,3 +281,22 @@ li.selected {
 .message.own {
     margin-left: 17.5%;
 }
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button[type="submit"] {
+    position: absolute;
+    right: 5px;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    flex-basis: 85%;
+}
