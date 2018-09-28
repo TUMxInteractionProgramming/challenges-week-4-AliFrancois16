@@ -89,3 +89,15 @@ function expiresIn(time) {
     return Math.round((((time - Date.now()) % 86400000) % 3600000) / 60000);
     // return new Date(time - Date.now()).getMinutes();
 }
+
+function listChannels() {
+    createChannelElement(yummy);
+    createChannelElement(sevenContinents);
+    createChannelElement(killerApp);
+    createChannelElement(firstPersonOnMars);
+    createChannelElement(octoberfest);
+}
+
+function createChannelElement(channel) {
+    $("<li onclick='switchChannel(this)>'").html(this.name + '<!-- #5 #channels #icons now grouped in .channel-meta span --><span class="channel-meta"><i class="far fa-star"></i><!-- #5 #channels #icons now with chevron --><i class="fas fa-chevron-right"></i></span>').appendTo("<ul>");
+}
